@@ -1,6 +1,6 @@
 @extends('bootstrap')
 @section('master')
-<form method="POST" action="{{ route('afiliado.insertar') }}">
+<form method="POST" action="{{ route('afiliado.insertar') }}" class="text-light">
   @csrf
   <input
     type="text"

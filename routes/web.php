@@ -13,12 +13,14 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/',[PagesController::class,'inicio']);
+Route::get('/',[PagesController::class,'mostrarAfiliados']);
 
-Route::get('/agregarafiliado',[PagesController::class,'agregarAfiliado']); //Vista para capturar datos de nuevo afiliado
+Route::get('/agregarafiliado',[PagesController::class,'agregarAfiliado'])->name('afiliado.agregar'); //Vista para capturar datos de nuevo afiliado
 
 Route::post('/insertarAfiliado',[PagesController::class,'insertarAfiliado'])->name('afiliado.insertar'); //Inserta el afiliado nuevo a la base de datos.
 
 Route::get('/mostrarAfiliados',[PagesController::class,'mostrarAfiliados'])->name('afiliados.mostrar'); //Inserta el afiliado nuevo a la base de datos.
 
 Route::delete('/eliminar/{id}', [PagesController::class,'eliminar'])->name('afiliado.eliminar');
+
+Route::get('/editar/{id}', [PagesController::class,'editar'])->name('afiliado.editar');

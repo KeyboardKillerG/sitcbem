@@ -18,7 +18,7 @@
           @csrf
           <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
           </form>
-         <button class="btn btn-sm btn-info" type="button" name="delete">Actualizar</button>
+          <a href="{{route('afiliado.editar', $item->AfiliadoID)}}" class="btn btn-info btn-sm">Editar</a>
       </td>
     </tr>
     @endforeach

@@ -57,4 +57,10 @@ class PagesController extends Controller
       return back()->with('mensaje', 'Nota Eliminada');
     }
 
+    public function editar($id){
+      $afiliado = Afiliado::where('AfiliadoID',$id)->get();
+      return view('editarAfiliado', compact('afiliado'));
+    }
+
+
 }

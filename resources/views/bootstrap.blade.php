@@ -8,10 +8,31 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>SITCBEM</title>
   </head>
-  <body>
-    @yield('master')
+  <body style="
+      background: linear-gradient(to right, #2193b0, #6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-info p-2">
+    <a class="navbar-brand" href="#">SITCBEM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ route('afiliados.mostrar') }}">Ver Afiliados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('afiliado.agregar') }}">Agregar Afiliado</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <div class="container mt-3 p-4 bg-light">
+
+      @yield('master')
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
