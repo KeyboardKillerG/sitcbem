@@ -32,7 +32,7 @@
    <input type="radio" id="female" name="Genero" value="female">
    <label for="female">Mujer</label><br>
    <input type="radio" id="other" name="Genero" value="other">
-   <label for="other">Puto</label>
+   <label for="other">Otro</label>
 
   <p>Estado Civil:</p>
    <input type="radio" id="female" name="EstadoCivil" value="Casado">
