@@ -20,12 +20,23 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+
         <li class="nav-item active">
           <a class="nav-link" href="{{ route('afiliados.mostrar') }}">Ver Afiliados</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="{{ route('afiliado.agregar') }}">Agregar Afiliado</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('centrosTrabajo.mostrar') }}">Ver centros</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('centroTrabajo.agregar') }}">Agregar centro</a>
+        </li>
+
       </ul>
     </div>
   </nav>
@@ -36,6 +47,7 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->

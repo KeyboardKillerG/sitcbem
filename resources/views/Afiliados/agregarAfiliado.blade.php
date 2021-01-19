@@ -16,7 +16,7 @@
   />
   <input
     type="text"
-    name="ApellidoP"
+    name="ApellidoM"
     placeholder="Apellido Paterno"
     class="form-control mb-2"
   />
@@ -26,19 +26,23 @@
     placeholder="Fecha Nacimiento"
     class="form-control mb-2"
   />
-  <p>Genero:</p>
-   <input type="radio" id="male" name="Genero" value="male">
-   <label for="male">Hombre</label><br>
-   <input type="radio" id="female" name="Genero" value="female">
-   <label for="female">Mujer</label><br>
-   <input type="radio" id="other" name="Genero" value="other">
-   <label for="other">Otro</label>
 
-  <p>Estado Civil:</p>
-   <input type="radio" id="female" name="EstadoCivil" value="Casado">
-   <label for="female">Casado</label><br>
-   <input type="radio" id="other" name="EstadoCivil" value="Soltero">
-   <label for="other">Soltero</label>
+  <div class="form-group mb-2">
+   <label for="genero">Genero</label>
+   <select class="form-control" id="genero" name="Genero">
+     <option>Hombre</option>
+     <option>Mujer</option>
+     <option>Otro</option>
+   </select>
+ </div>
+
+ <div class="form-group mb-2">
+  <label for="edocivil">Estado Civil</label>
+  <select class="form-control" id="edocivil" name="EstadoCivil">
+    <option>Soltero</option>
+    <option>Casado</option>
+  </select>
+  </div>
 
    <input
     type="number"
@@ -53,6 +57,14 @@
       placeholder="Colonia"
       class="form-control mb-2"
     />
+
+    <input
+      type="text"
+      name="Calle"
+      placeholder="Calle"
+      class="form-control mb-2"
+    />
+
     <input
       type="text"
       name="NumeroExterior"
@@ -83,12 +95,18 @@
       placeholder="CURP"
       class="form-control mb-2"
     />
-    <input
-      type="text"
-      name="CentroTrabajo"
-      placeholder="Centro de trabajo"
-      class="form-control mb-2"
-    />
+
+ <label for="centroTrabajo">Centro de Trabajo (Para seleccionar varios, mantenga pulsado 'Ctrl')</label>
+    <div class="form-group mb-2">
+     <select class="form-control" id="centroTrabajo" name="CentroTrabajoID">
+       @foreach ($centrosTrabajo as $centroTrabajo)
+        <option value='{{$centroTrabajo->id}}'>{{$centroTrabajo->Nombre}}</option>
+       @endforeach
+
+
+     </select>
+     </div>
+
     <input
       type="text"
       name="TipoPlaza"
@@ -108,6 +126,13 @@
       class="form-control mb-2"
     />
 
+    <div class="form-group mb-2">
+     <label for="estado">Estado</label>
+     <select class="form-control" id="estado" name="Estado">
+       <option>Activo</option>
+       <option>Inactivo</option>
+     </select>
+   </div>
 
   <button class="btn btn-primary btn-block" type="submit">Agregar</button>
 </form>

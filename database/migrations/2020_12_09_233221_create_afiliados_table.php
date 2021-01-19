@@ -14,7 +14,7 @@ class CreateAfiliadosTable extends Migration
     public function up()
     {
         Schema::create('afiliados', function (Blueprint $table) {
-            $table->id('AfiliadoID');
+            $table->id();
             $table->string('Nombre',45);
             $table->string('ApellidoP',45);
             $table->string('ApellidoM',45);

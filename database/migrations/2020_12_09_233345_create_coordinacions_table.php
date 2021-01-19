@@ -14,9 +14,9 @@ class CreateCoordinacionsTable extends Migration
     public function up()
     {
         Schema::create('coordinacions', function (Blueprint $table) {
-            $table->id('CoordinacionID');
+            $table->id();
             $table->string('Nombre',45);
-            $table->string('Telefono',13);            
+            $table->string('Telefono',13);
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@
           {{ session('mensaje') }}
       </div>
   @endif
-  <form action="" method="POST">
+  <form action="{{ route('afiliado.update', $afiliado->id) }}" method="POST">
     @method('PUT')
     @csrf
 
@@ -16,25 +16,28 @@
       name="Nombre"
       placeholder="Nombre"
       class="form-control mb-2 w-50"
-      value="{{ $afiliado[0]->Nombre }}"
+      value="{{ $afiliado->Nombre }}"
     />
     <input
       type="text"
       name="ApellidoP"
       placeholder="Apellido Paterno"
       class="form-control mb-2 w-50"
+      value="{{ $afiliado->ApellidoP }}"
     />
     <input
       type="text"
-      name="ApellidoP"
-      placeholder="Apellido Paterno"
+      name="ApellidoM"
+      placeholder="Apellido Materno"
       class="form-control mb-2 w-50"
+      value="{{ $afiliado->ApellidoM }}"
     />
     <input
       type="date"
       name="FechaNacimiento"
       placeholder="Fecha Nacimiento"
       class="form-control mb-2 w-25"
+      value="{{ $afiliado->FechaNacimiento }}"
     />
     <label for='genero'>Genero:</label>
     <select class="form-control mb-2 w-25" name="Genero" id='genero'>
@@ -56,6 +59,7 @@
       name="CodigoPostal"
       placeholder="202020"
       class="form-control mb-2 w-25"
+      value="{{ $afiliado->CodigoPostal }}"
       />
 
       <input
@@ -63,60 +67,81 @@
         name="Colonia"
         placeholder="Colonia"
         class="form-control mb-2 w-25"
+        value="{{ $afiliado->Colonia }}"
       />
+
+      <input
+        type="text"
+        name="Calle"
+        placeholder="Calle"
+        class="form-control mb-2 w-25"
+        value="{{ $afiliado->Calle }}"
+      />
+
       <input
         type="text"
         name="NumeroExterior"
         placeholder="Numero Exterior"
         class="form-control mb-2  w-25"
+        value="{{ $afiliado->NumeroExterior }}"
       />
       <input
         type="text"
         name="NumeroInterior"
         placeholder="Numero Interior"
         class="form-control mb-2  w-25"
+        value="{{ $afiliado->NumeroInterior }}"
       />
       <input
         type="text"
         name="Telefono"
         placeholder="Telefono"
         class="form-control mb-2 w-25"
+        value="{{ $afiliado->Telefono }}"
       />
       <input
         type="text"
         name="Email"
         placeholder="Email"
         class="form-control mb-2 w-25"
+        value="{{ $afiliado->Email }}"
       />
       <input
         type="text"
         name="CURP"
         placeholder="CURP"
         class="form-control mb-2  w-25"
+        value="{{ $afiliado->CURP }}"
       />
-      <input
-        type="text"
-        name="CentroTrabajo"
-        placeholder="Centro de trabajo"
-        class="form-control mb-2 w-25"
-      />
+      <label for="centroTrabajo">Centro de Trabajo (Para seleccionar varios, mantenga pulsado 'Ctrl')</label>
+       <div class="form-group mb-2">
+         <select class="form-control" id="centroTrabajo" name="CentroTrabajoID">
+            @foreach ($centrosTrabajo as $centroTrabajo)
+             <option value='{{$centroTrabajo->id}}'>{{$centroTrabajo->Nombre}}</option>
+            @endforeach
+         </select>
+
+
       <input
         type="text"
         name="TipoPlaza"
         placeholder="Tipo de plaza"
         class="form-control mb-2  w-25"
+        value="{{ $afiliado->TipoPlaza }}"
       />
       <input
         type="date"
         name="FechaIngreso"
         placeholder="Fecha de Ingreso"
         class="form-control mb-2 w-25"
+        value="{{ $afiliado->FechaIngreso }}"
       />
       <input
         type="text"
         name="RFC"
         placeholder="RFC"
         class="form-control mb-2 w-25"
+        value="{{ $afiliado->RFC }}"
       />
     <button class="btn btn-info btn-block" type="submit">Editar</button>
   </form>

@@ -21,6 +21,21 @@ Route::post('/insertarAfiliado',[PagesController::class,'insertarAfiliado'])->na
 
 Route::get('/mostrarAfiliados',[PagesController::class,'mostrarAfiliados'])->name('afiliados.mostrar'); //Inserta el afiliado nuevo a la base de datos.
 
-Route::delete('/eliminar/{id}', [PagesController::class,'eliminar'])->name('afiliado.eliminar');
+Route::delete('/eliminarAfiliado/{id}', [PagesController::class,'eliminarAfiliado'])->name('afiliado.eliminar');
 
-Route::get('/editar/{id}', [PagesController::class,'editar'])->name('afiliado.editar');
+Route::get('/editarAfiliado/{id}', [PagesController::class,'editarAfiliado'])->name('afiliado.editar');
+
+Route::put('/editarAfiliado/{id}', [PagesController::class,'updateAfiliado'])->name('afiliado.update');
+
+//Centros Trabajo
+Route::get('/agregarCentroTrabajo',[PagesController::class,'agregarCentroTrabajo'])->name('centroTrabajo.agregar');
+
+Route::post('/insertarCentroTrabajo',[PagesController::class,'insertarCentroTrabajo'])->name('centroTrabajo.insertar'); //Inserta el afiliado nuevo a la base de datos.
+
+Route::get('/mostrarCentrosTrabajo',[PagesController::class,'mostrarCentrosTrabajo'])->name('centrosTrabajo.mostrar'); //Inserta el afiliado nuevo a la base de datos.
+
+Route::delete('/eliminarCentroTrabajo/{id}', [PagesController::class,'eliminarCentroTrabajo'])->name('centroTrabajo.eliminar');
+
+Route::get('/editarCentroTrabajo/{id}', [PagesController::class,'editarCentroTrabajo'])->name('centroTrabajo.editar');
+
+Route::put('/editarCentroTrabajo/{id}', [PagesController::class,'updateCentroTrabajo'])->name('centroTrabajo.update');
