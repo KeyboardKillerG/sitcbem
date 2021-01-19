@@ -20,13 +20,14 @@
     value = "{{$centro->Telefono}}"
   </>
 
-  <input
-    type="number"
-    name="CoordinacionID"
-    placeholder="Coordinacion"
-    class="form-control mb-2"
-    value = "{{$centro->CoordinacionID}}"
-  </>
+  <div class="form-group mb-2">
+     <label for="coordinacion">Coordinaciones</label>
+     <select class="form-control" id="coordinacion" name="CoordinacionID">
+         @foreach ($coordinaciones as $coordinacion)
+          <option>{{$coordinacion->Nombre}}</option>
+         @endforeach
+      </select>
+  </div>
 
 
   <button class="btn btn-primary btn-block" type="submit">Agregar</button>

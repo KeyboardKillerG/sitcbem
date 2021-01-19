@@ -37,6 +37,8 @@
           <a class="nav-link" href="{{ route('centroTrabajo.agregar') }}">Agregar centro</a>
         </li>
 
+        
+
       </ul>
     </div>
   </nav>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Afiliado;
 use App\Models\CentroTrabajo;
 use App\Models\Coordinacion;
+use App\Models\Estado;
 
 class PagesController extends Controller
 {
@@ -16,8 +17,9 @@ class PagesController extends Controller
     public function agregarAfiliado(){
 
       $centrosTrabajo = CentroTrabajo::all();
+      $estados = Estado::all();
 
-      return view('Afiliados.agregarAfiliado', compact('centrosTrabajo'));
+      return view('Afiliados.agregarAfiliado', compact('centrosTrabajo', 'estados'));
 
     }
 
@@ -54,7 +56,7 @@ class PagesController extends Controller
        $afiliados = Afiliado::all();
        $centrosTrabajo = CentroTrabajo::all();
 
-       return view('Afiliados.mostrarAfiliados', compact('afiliados','centrosTrabajo'));
+       return view('Afiliados.verAfiliados', compact('afiliados','centrosTrabajo'));
      }
 
     public function eliminarAfiliado($id){
@@ -67,8 +69,9 @@ class PagesController extends Controller
     public function editarAfiliado($id){
       $afiliado = Afiliado::findOrFail($id);
       $centrosTrabajo = CentroTrabajo::all();
+      $estados = Estado::all();
 
-      return view('Afiliados.editarAfiliado', compact('afiliado','centrosTrabajo'));
+      return view('Afiliados.editarAfiliado', compact('afiliado','centrosTrabajo','estados'));
     }
 
     public function updateAfiliado(Request $request , $id){
@@ -102,7 +105,9 @@ class PagesController extends Controller
     //CENTROS TRABAJO
 
     public function agregarCentroTrabajo(){
-      return view('CentrosTrabajo.agregarCentro');
+      $coordinaciones = Coordinacion::all();
+
+      return view('CentrosTrabajo.agregarCentro', compact('coordinaciones'));
     }
 
     public function insertarCentroTrabajo(Request $request){
@@ -132,7 +137,9 @@ class PagesController extends Controller
 
      public function editarCentroTrabajo($id){
        $centro = CentroTrabajo::findOrFail($id);
-       return view('CentrosTrabajo.editarCentroTrabajo', compact('centro'));
+       $coordinaciones = Coordinacion::all();
+
+       return view('CentrosTrabajo.editarCentroTrabajo', compact('centro','coordinaciones'));
      }
 
      public function updateCentroTrabajo(Request $request , $id){

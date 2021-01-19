@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Estado;
 
 class EstadosTableSeeder extends Seeder
 {
@@ -14,5 +15,24 @@ class EstadosTableSeeder extends Seeder
     public function run()
     {
         //
+
+
+
+        Estado::truncate(); // Evita duplicar datos
+        $estado = new Estado();
+        $estado->Estado = "Activo";
+        $estado->Descripcion = "Activo";
+        $estado->save();
+
+        $estado = new Estado();
+        $estado->Estado = "Inactivo";
+        $estado->Descripcion = "Inactivo";
+        $estado->save();
+
+        $estado = new Estado();
+        $estado->Estado = "Pausado";
+        $estado->Descripcion = "Pausado";
+        $estado->save();
+
     }
 }

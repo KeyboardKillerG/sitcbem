@@ -143,6 +143,16 @@
         class="form-control mb-2 w-25"
         value="{{ $afiliado->RFC }}"
       />
+
+      <div class="form-group mb-2">
+       <label for="estado">Estado</label>
+       <select class="form-control" id="estado" name="Estado">
+         @foreach ($estados as $estado)
+         <option>{{$estado->Estado}}</option>
+         @endforeach
+       </select>
+     </div>
+     
     <button class="btn btn-info btn-block" type="submit">Editar</button>
   </form>
 @endsection
