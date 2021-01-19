@@ -39,3 +39,17 @@ Route::delete('/eliminarCentroTrabajo/{id}', [PagesController::class,'eliminarCe
 Route::get('/editarCentroTrabajo/{id}', [PagesController::class,'editarCentroTrabajo'])->name('centroTrabajo.editar');
 
 Route::put('/editarCentroTrabajo/{id}', [PagesController::class,'updateCentroTrabajo'])->name('centroTrabajo.update');
+
+//Coordinaciones
+
+Route::get('/agregarCoordinacion',[PagesController::class,'agregarCoordinacion'])->name('coordinacion.agregar');
+
+Route::post('/insertarCoordinacion',[PagesController::class,'insertarCoordinacion'])->name('coordinacion.insertar'); //Inserta el afiliado nuevo a la base de datos.
+
+Route::get('/mostrarCoordinaciones',[PagesController::class,'mostrarCoordinaciones'])->name('coordinaciones.mostrar'); //Inserta el afiliado nuevo a la base de datos.
+
+Route::delete('/eliminarCoordinacion/{id}', [PagesController::class,'eliminarCoordinacion'])->name('coordinacion.eliminar');
+
+Route::get('/editarCoordinacion/{id}', [PagesController::class,'editarCoordinacion'])->name('coordinacion.editar');
+
+Route::put('/editarCoordinacion/{id}', [PagesController::class,'updateCoordinacion'])->name('coordinacion.update');
