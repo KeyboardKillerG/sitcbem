@@ -137,9 +137,10 @@ class PagesController extends Controller
 
      public function editarCentroTrabajo($id){
        $centro = CentroTrabajo::findOrFail($id);
+       $coordi = Coordinacion::findOrFail($centro->CoordinacionID);
        $coordinaciones = Coordinacion::all();
 
-       return view('CentrosTrabajo.editarCentroTrabajo', compact('centro','coordinaciones'));
+       return view('CentrosTrabajo.editarCentroTrabajo', compact('centro','coordi','coordinaciones'));
      }
 
      public function updateCentroTrabajo(Request $request , $id){
