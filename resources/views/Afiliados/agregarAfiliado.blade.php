@@ -55,7 +55,7 @@
     placeholder="202020"
     class="form-control mb-2"
     />
-S
+
     <input
       type="text"
       required="text"

@@ -21,7 +21,6 @@
     class="form-control mb-2"
     value = "{{$centro->Telefono}}"
   />
-<<<<<<< HEAD
 
   <div class="form-group mb-2">
      <label for="coordinacion">Coordinaciones</label>
@@ -33,7 +32,6 @@
           @endif
        @endforeach
   </select>
-=======
   
   <div class="form-group mb-2">
      <label for="coordinacion">Coordinaciones</label>
@@ -45,7 +43,7 @@
          @endif
          @endforeach
       </select>
->>>>>>> 70c9ebebead7ed9243d344edc2bcfbcc6f49a328
+
   </div>
 
   <button class="btn btn-primary btn-block" type="submit">Agregar</button>
