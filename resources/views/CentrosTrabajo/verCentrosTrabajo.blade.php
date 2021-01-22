@@ -11,12 +11,23 @@
     </tr>
   </thead>
   <tbody>
+
     @foreach ($centros as $centro)
     <tr>
       <th scope="row">{{ $centro->id }}</th>
       <td>{{ $centro->Nombre }}</td>
       <td>{{ $centro->Telefono }}</td>
-      <td>{{ $centro->CoordinacionID }}</td>
+      <td>
+
+     
+      @foreach($Coordinacionx as $Coordinacion)
+          @if($Coordinacion->id == $centro->CoordinacionID)
+            {{$Coordinacion->Nombre}}
+          @endif
+        @endforeach
+      
+      
+      </td>
       <td><form action="{{ route('centroTrabajo.eliminar', $centro->id) }}" class="d-inline" method="POST">
           @method('DELETE')
           @csrf

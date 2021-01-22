@@ -4,24 +4,26 @@
   @csrf
   <input
     type="text"
+    required="text"
     name="Nombre"
     placeholder="Nombre"
     class="form-control mb-2"
-  </>
+/>
 
   <input
     type="text"
+    required="number"
     name="Telefono"
     placeholder="Telefono"
     class="form-control mb-2"
-  </>
+  />
 
 
   <div class="form-group mb-2">
      <label for="coordinacion">Coordinaciones</label>
      <select class="form-control" id="coordinacion" name="CoordinacionID">
          @foreach ($coordinaciones as $coordinacion)
-          <option>{{$coordinacion->Nombre}}</option>
+          <option value='{{$coordinacion->id}}' >{{$coordinacion->Nombre}}</option>
          @endforeach
       </select>
   </div>

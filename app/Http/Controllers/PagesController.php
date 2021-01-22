@@ -124,8 +124,8 @@ class PagesController extends Controller
     public function mostrarCentrosTrabajo(){
 
        $centros = CentroTrabajo::all();
-
-       return view('CentrosTrabajo.verCentrosTrabajo', compact('centros'));
+       $Coordinacionx = Coordinacion::all();
+       return view('CentrosTrabajo.verCentrosTrabajo', compact('centros','Coordinacionx'));
      }
 
      public function eliminarCentroTrabajo($id){
@@ -136,12 +136,21 @@ class PagesController extends Controller
      }
 
      public function editarCentroTrabajo($id){
+<<<<<<< HEAD
+      $centro = CentroTrabajo::findOrFail($id);
+      $coordi = Coordinacion::findOrFail($centro->CoordinacionID);
+      $coordinaciones = Coordinacion::all();
+
+      return view('CentrosTrabajo.editarCentroTrabajo', compact('centro','coordi','coordinaciones'));
+    }
+=======
        $centro = CentroTrabajo::findOrFail($id);
        $coordi = Coordinacion::findOrFail($centro->CoordinacionID);
        $coordinaciones = Coordinacion::all();
 
        return view('CentrosTrabajo.editarCentroTrabajo', compact('centro','coordi','coordinaciones'));
      }
+>>>>>>> 70c9ebebead7ed9243d344edc2bcfbcc6f49a328
 
      public function updateCentroTrabajo(Request $request , $id){
        $centroTrabajo = CentroTrabajo::findOrFail($id);

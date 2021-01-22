@@ -4,24 +4,28 @@
   @csrf
   <input
     type="text"
+    required="text"
     name="Nombre"
     placeholder="Nombre"
     class="form-control mb-2"
   />
   <input
     type="text"
+    required="text"
     name="ApellidoP"
     placeholder="Apellido Paterno"
     class="form-control mb-2"
   />
   <input
     type="text"
+    required="text"
     name="ApellidoM"
     placeholder="Apellido Paterno"
     class="form-control mb-2"
   />
   <input
     type="date"
+    required="date"
     name="FechaNacimiento"
     placeholder="Fecha Nacimiento"
     class="form-control mb-2"
@@ -46,13 +50,15 @@
 
    <input
     type="number"
+    required="number"
     name="CodigoPostal"
     placeholder="202020"
     class="form-control mb-2"
     />
-
+S
     <input
       type="text"
+      required="text"
       name="Colonia"
       placeholder="Colonia"
       class="form-control mb-2"
@@ -60,6 +66,7 @@
 
     <input
       type="text"
+      required="text"
       name="Calle"
       placeholder="Calle"
       class="form-control mb-2"
@@ -67,30 +74,35 @@
 
     <input
       type="text"
+      required="text"
       name="NumeroExterior"
       placeholder="Numero Exterior"
       class="form-control mb-2"
     />
     <input
       type="text"
+      required="text"
       name="NumeroInterior"
       placeholder="Numero Interior"
       class="form-control mb-2"
     />
     <input
       type="text"
+      required="text"
       name="Telefono"
       placeholder="Telefono"
       class="form-control mb-2"
     />
     <input
       type="text"
+      required="email"
       name="Email"
       placeholder="Email"
       class="form-control mb-2"
     />
     <input
       type="text"
+      required="texto"
       name="CURP"
       placeholder="CURP"
       class="form-control mb-2"
@@ -109,18 +121,21 @@
 
     <input
       type="text"
+      required="text"
       name="TipoPlaza"
       placeholder="Tipo de plaza"
       class="form-control mb-2"
     />
     <input
       type="date"
+      required="date"
       name="FechaIngreso"
       placeholder="Fecha de Ingreso"
       class="form-control mb-2"
     />
     <input
       type="text"
+      required="text"
       name="RFC"
       placeholder="RFC"
       class="form-control mb-2"

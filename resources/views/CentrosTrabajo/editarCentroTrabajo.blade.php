@@ -6,19 +6,34 @@
 
   <input
     type="text"
+    required="text"
     name="Nombre"
     placeholder="Nombre"
     class="form-control mb-2"
     value = "{{$centro->Nombre}}"
-  </>
+  />
 
   <input
     type="text"
+    required="text"
     name="Telefono"
     placeholder="Telefono"
     class="form-control mb-2"
     value = "{{$centro->Telefono}}"
   />
+<<<<<<< HEAD
+
+  <div class="form-group mb-2">
+     <label for="coordinacion">Coordinaciones</label>
+     <select class="form-control" id="coordinacion" name="CoordinacionID">
+      <option>{{$coordi->Nombre}}</option>
+        @foreach ($coordinaciones as $coordinacion)
+          @if ($coordinacion->id!=$coordi->id)
+            <option>{{$coordinacion->Nombre}}</option>
+          @endif
+       @endforeach
+  </select>
+=======
   
   <div class="form-group mb-2">
      <label for="coordinacion">Coordinaciones</label>
@@ -30,6 +45,7 @@
          @endif
          @endforeach
       </select>
+>>>>>>> 70c9ebebead7ed9243d344edc2bcfbcc6f49a328
   </div>
 
   <button class="btn btn-primary btn-block" type="submit">Agregar</button>
